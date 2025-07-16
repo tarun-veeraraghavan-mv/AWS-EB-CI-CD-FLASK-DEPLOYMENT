@@ -7,8 +7,8 @@ on:
     branches: [main]
 
 env:
-  AWS_ACCESS_KEY: ${{secrets.AWS_ACCESS_KEY}}
-  AWS_SECRET_KEY: ${{secrets.AWS_SECRET_KEY}}
+  AWS_ACCESS_KEY:
+  AWS_SECRET_KEY:
 
 jobs:
   deploy:
@@ -41,8 +41,8 @@ jobs:
       - name: Deploy to EB
         uses: einaregilsson/beanstalk-deploy@v22
         with:
-          aws_access_key: $AWS_ACCESS_KEY
-          aws_secret_key: $AWS_SECRET_KEY
+          aws_access_key: ${{secrets.AWS_ACCESS_KEY}}
+          aws_secret_key: ${{secrets.AWS_SECRET_KEY}}
           application_name: test-flask-2
           environment_name: Test-flask-2-env
           version_label: ${{ github.sha }}
