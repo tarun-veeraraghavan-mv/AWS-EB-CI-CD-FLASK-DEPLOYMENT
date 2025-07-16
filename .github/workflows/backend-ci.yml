@@ -46,5 +46,5 @@ jobs:
           application_name: test-flask-2
           environment_name: Test-flask-2-env
           version_label: ${{ github.sha }}
-          region: us-east-1
+          region: us-east-2
           deployment_package: deploy.zip
