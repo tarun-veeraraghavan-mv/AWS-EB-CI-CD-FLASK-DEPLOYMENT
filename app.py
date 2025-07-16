@@ -10,5 +10,9 @@ def index():
 def hello():
     return "Hello OK", 200
 
+@app.route("/new-route")
+def aws_works():
+    return "If this works - AWS CI/CD works!"
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
